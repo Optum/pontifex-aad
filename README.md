@@ -98,6 +98,7 @@ Helper package for managing App Registrations, App Roles, and permission grantin
 <!-- USAGE EXAMPLES -->
 ## Usage
 
+### Creating an App Registration and associated Service Principal
 ```typescript
 const application = await pontifex.application.create({
     "displayName": `${environment}-${request.applicationName}`,
