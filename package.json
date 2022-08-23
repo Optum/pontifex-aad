@@ -1,0 +1,29 @@
+{
+  "name": "@optum-pontifex/pontifex-aad",
+  "description": "Module for connecting to Azure AD to perform Pontifex activities",
+  "version": "1.1.1",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "keywords": [
+    "pontifex",
+    "azure"
+  ],
+  "author": {
+    "name": "aaavang",
+    "email": "alexander.aavang@optum.com",
+    "url": "https://github.com/aaavang"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@azure/identity": "^2.0.4",
+    "@microsoft/microsoft-graph-client": "^3.0.2",
+    "@microsoft/microsoft-graph-types": "^2.16.0",
+    "isomorphic-fetch": "^3.0.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.23",
+    "@types/uuid": "^8.3.4",
+    "typescript": "^4.6.3"
+  }
+}
