@@ -1,0 +1,9 @@
+pontifex-aad
+Copyright 2022 Optum
+
+Project Description:
+====================
+Azure Active Directory helper module for Pontifex
+
+Author(s):
+Alexander Aavang - @aaavang
