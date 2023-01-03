@@ -1,7 +1,7 @@
 {
-  "name": "@optum-pontifex/pontifex-aad",
+  "name": "@optum/pontifex-aad",
   "description": "Module for connecting to Azure AD to perform Pontifex activities",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "keywords": [

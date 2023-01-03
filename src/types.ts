@@ -4,3 +4,11 @@ export interface PontifexAADConfig {
     clientSecret?: string
     debugLogging?: boolean
 }
+
+export interface AddPasswordRequest {
+    displayName: string
+}
+
+export interface RemovePasswordRequest {
+    keyId: string
+}

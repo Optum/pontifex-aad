@@ -4,10 +4,10 @@ import {
     TokenCredentialAuthenticationProvider,
     TokenCredentialAuthenticationProviderOptions
 } from "@microsoft/microsoft-graph-client/authProviders/azureTokenCredentials";
-import { Application, ServicePrincipal } from "@microsoft/microsoft-graph-types";
+import { Application, PasswordCredential, ServicePrincipal } from "@microsoft/microsoft-graph-types";
 import "isomorphic-fetch";
 import { validate } from "uuid"
-import { PontifexAADConfig } from "./types";
+import { AddPasswordRequest, PontifexAADConfig, RemovePasswordRequest } from "./types";
 
 const APPLICATIONS_API_PATH = "/applications"
 const SERVICE_PRINCIPALS_API_PATH = "/servicePrincipals"
@@ -28,6 +28,12 @@ export class PontifexAAD {
         },
         delete: async (appObjectId: string) => {
             await this.aad.api(`${APPLICATIONS_API_PATH}/${appObjectId}`).delete()
+        },
+        addPassword: async (appObjectId: string, request: AddPasswordRequest): Promise<PasswordCredential> => {
+            return await this.aad.api(`${APPLICATIONS_API_PATH}/${appObjectId}/addPassword`).post(request)
+        },
+        removePassword: async (appObjectId: string, request: RemovePasswordRequest) => {
+            return await this.aad.api(`${APPLICATIONS_API_PATH}/${appObjectId}/removePassword`).post(request)
         }
     }
     servicePrincipal = {
