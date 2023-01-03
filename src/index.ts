@@ -30,7 +30,11 @@ export class PontifexAAD {
             await this.aad.api(`${APPLICATIONS_API_PATH}/${appObjectId}`).delete()
         },
         addPassword: async (appObjectId: string, request: AddPasswordRequest): Promise<PasswordCredential> => {
-            return await this.aad.api(`${APPLICATIONS_API_PATH}/${appObjectId}/addPassword`).post(request)
+            return await this.aad.api(`${APPLICATIONS_API_PATH}/${appObjectId}/addPassword`).post({
+                passwordCredential: {
+                    displayName: request.displayName
+                }
+            })
         },
         removePassword: async (appObjectId: string, request: RemovePasswordRequest) => {
             return await this.aad.api(`${APPLICATIONS_API_PATH}/${appObjectId}/removePassword`).post(request)
